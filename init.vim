@@ -27,7 +27,7 @@ Plug 'thisivan/vim-bufexplorer'
 Plug 'tpope/vim-dispatch'
 Plug 'elixir-editors/vim-elixir'
 Plug 'renderedtext/vim-elixir-alternative-files'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
