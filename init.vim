@@ -131,6 +131,8 @@ map <leader><leader> :A<CR>
 map <leader>s :split<CR>
 map <leader>v :vsplit<CR>
 
+map vimconfig :e ~/.config/nvim/init.vim<cr>
+
 let g:ag_prg="ag --nocolor --nogroup --column"
 nmap <leader>a :Ag! ""<Left>
 nmap <leader>A :Ag! <C-r><C-w>
