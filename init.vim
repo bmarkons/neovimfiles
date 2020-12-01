@@ -10,7 +10,7 @@ Plug 'godlygeek/tabular'
 Plug 'isRuslan/vim-es6'
 Plug 'janko-m/vim-test'
 Plug 'kana/vim-textobj-user'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'neomake/neomake'
@@ -28,6 +28,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'elixir-editors/vim-elixir'
 Plug 'renderedtext/vim-elixir-alternative-files'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'shiroyasha/make-test'
 
 call plug#end()
 
@@ -35,6 +36,7 @@ runtime macros/matchit.vim               " Enables % to cycle through `if/else/e
 
 let g:vimfiler_safe_mode_by_default = 0  " disable safe mode for VimFiler
 
+set mouse=a                              " Enable scrolling with mouse
 set number
 set ruler                                " Show the cursor position all the time
 set colorcolumn=80                       " Show vertical bar at column 80
@@ -171,6 +173,12 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" leave only current split open
+map <leader>o :only<cr>
+
+" exit nvim
+map <leader>q :x<cr>
+
 " disable cursor keys in normal mode
 map <Left>  :echo "no! use h!"<cr>
 map <Down>  :echo "no! use j!"<cr>
@@ -215,6 +223,11 @@ highlight ColorColumn ctermbg=234
 if has('nvim')
   tmap <C-o> <C-\><C-n>
 end
+
+" make-test
+
+nmap <silent> <leader>t :MakeTestFileLine<CR>
+nmap <silent> <leader>T :MakeTestFile<CR>
 
 "
 " Golang setup, based on https://hackernoon.com/my-neovim-setup-for-go-7f7b6e805876
